@@ -178,7 +178,8 @@ set ruler "Show cursor location info on status line
 noremap <Space> <PageDown>
 
 " Keycodes and maps timeout in 3/10 sec...
-set wildignore+=*.swp,*.pyc,*venv/*
+set timeout timeoutlen=300 ttimeoutlen=300
+"=====[ Cut and paste from MacOSX clipboard ]====================
 
 " use ack instead of grep
 set grepprg=ack

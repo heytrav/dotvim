@@ -58,3 +58,6 @@
 [submodule "bundle/jinja2"]
 	path = bundle/jinja2
 	url = git@github.com:mitsuhiko/jinja2.git
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
+	url = git@github.com:jlanzarotta/bufexplorer.git
