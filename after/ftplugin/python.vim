@@ -1,6 +1,6 @@
 set foldmethod=indent
 set foldlevel=99
-colorscheme candycode
+"colorscheme candycode
 "colorscheme pychimp
  
 "let g:flake8_ignore="E501"

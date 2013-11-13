@@ -16,7 +16,7 @@ let netrw_list_hide='\.pyc,\.swp,\.git,tags'
 iab xcodegitconf # xcode noise<CR>build/*<CR>*.mode1v3<CR><CR># SVN directories<CR>.svn<CR><CR># osx noise<CR>.DS_Store<CR>profile<CR>
 let mapleader = ","
 map <leader>td <Plug>TaskList
-"map <leader>g :GundoToggle<CR>
+map <leader>g :GundoToggle<CR>
 noremap <leader>. :CtrlPTag<CR>
 noremap <silent> <leader>b :TagbarToggle<CR>
 
@@ -35,11 +35,10 @@ vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
 if has("autocmd")
-    autocmd bufwritepost .vimrc source $MYVIMRC
+    autocmd bufwritepost .vimrc source $MYVIMRC)
 endif
 
 nmap <leader>v :tabedit $MYVIMRC<CR>
-nmap <leader>g :tabedit /.gvimrc<CR>
 
 "=====[ Indenting support ]==================
 
@@ -178,6 +177,57 @@ set ruler "Show cursor location info on status line
 noremap <Space> <PageDown>
 
 " Keycodes and maps timeout in 3/10 sec...
+set timeout timeoutlen=300 ttimeoutlen=300
+"=====[ Cut and paste from MacOSX clipboard ]====================
+
+nmap <silent> <C-P> :set paste<CR>
+\!!pbtranspaste<CR>
+\:set nopaste<CR>
+\:set fileformat=unix<CR>
+
+vmap <silent> <C-P> x:call TransPaste(visualmode())<CR>
+
+function! TransPaste(type)
+let reg_save = @@
+
+let clipboard = system("pbtranspaste")
+
+call setreg('@', clipboard, a:type)
+
+silent exe "normal! P"
+
+let @@ = reg_save
+endfunction
+
+
+nmap <silent> <C-C> :w !pbtranscopy<CR><CR>
+vmap <silent> <C-C> :<C-U>call TransCopy(visualmode(), 1)<CR>
+
+function! TransCopy(type, ...)
+let sel_save = &selection
+let &selection = "inclusive"
+let reg_save = @@
+
+if a:0 " Invoked from Visual mode, use '< and '> marks.
+silent exe "normal! `<" . a:type . "`>y"
+elseif a:type == 'line'
+silent exe "normal! '[V']y"
+elseif a:type == 'block'
+silent exe "normal! `[\<C-V>`]y"
+else
+silent exe "normal! `[v`]y"
+endif
+
+call system("pbtranscopy", @@)
+
+let &selection = sel_save
+let @@ = reg_save
+endfunction
+
+
+
+" Generate ctags for subdirectories
+":nnoremap <f4> :!ctags -R --exclude=.git --exclude=.log --exclude=.pyc --exclude=CVS<CR>
 set wildignore+=*.swp,*.pyc,*venv/*
 
 " use ack instead of grep

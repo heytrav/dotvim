@@ -55,3 +55,6 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized
+[submodule "bundle/jinja2"]
+	path = bundle/jinja2
+	url = git@github.com:mitsuhiko/jinja2.git
