@@ -11,14 +11,17 @@ filetype indent on
 filetype plugin on
 
 let netrw_list_hide='\.pyc,\.swp,\.git,tags'
+let g:ctrlp_mruf_exclude = '.*\.git/.*/COMMIT_EDITMSG'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 "let sql_type_default='psql'
 
 iab xcodegitconf # xcode noise<CR>build/*<CR>*.mode1v3<CR><CR># SVN directories<CR>.svn<CR><CR># osx noise<CR>.DS_Store<CR>profile<CR>
 let mapleader = ","
 map <leader>td <Plug>TaskList
-"map <leader>g :GundoToggle<CR>
 noremap <leader>. :CtrlPTag<CR>
 noremap <silent> <leader>b :TagbarToggle<CR>
+"map <leader>g :GundoToggle<CR>
 
 set laststatus=2
 
