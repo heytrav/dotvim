@@ -1,9 +1,9 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-filetype off
-call pathogen#incubate()
-call pathogen#helptags()
-call pathogen#infect()
-filetype on
+"runtime bundle/vim-pathogen/autoload/pathogen.vim
+"filetype off
+"call pathogen#incubate()
+"call pathogen#helptags()
+"call pathogen#infect()
+"filetype on
 syntax on
 colorscheme candycode
 
@@ -16,17 +16,18 @@ let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 "let sql_type_default='psql'
 
-iab xcodegitconf # xcode noise<CR>build/*<CR>*.mode1v3<CR><CR># SVN directories<CR>.svn<CR><CR># osx noise<CR>.DS_Store<CR>profile<CR>
+"iab xcodegitconf # xcode noise<CR>build/*<CR>*.mode1v3<CR><CR># SVN directories<CR>.svn<CR><CR># osx noise<CR>.DS_Store<CR>profile<CR>
 let mapleader = ","
+"map <C-p> :CtrlP<CR>
 map <leader>td <Plug>TaskList
 noremap <leader>. :CtrlPTag<CR>
-noremap <silent> <leader>b :TagbarToggle<CR>
+"noremap <silent> <leader>b :TagbarToggle<CR>
 "map <leader>g :GundoToggle<CR>
 
 set laststatus=2
 
 
-set statusline=%#StatusLineNC#\ %#ErrorMsg#\ %{fugitive#statusline()}\ %#StatusLine#\ %t%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]
+"set statusline=%#StatusLineNC#\ %#ErrorMsg#\ %{fugitive#statusline()}\ %#StatusLine#\ %t%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]
 "set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %#ErrorMsg#
 
 " Tips from vimcasts
@@ -42,7 +43,7 @@ if has("autocmd")
 endif
 
 nmap <leader>v :tabedit $MYVIMRC<CR>
-nmap <leader>g :tabedit /.gvimrc<CR>
+nmap <leader>g :tabedit ~/.gvimrc<CR>
 
 "=====[ Indenting support ]==================
 
@@ -61,7 +62,7 @@ inoremap # X<C-H>#
 " Make BS/DEL work as expected
 vmap <BS> x
 
-"Square up visual selections 
+"Square up visual selections
 set virtualedit=block
 
 "=====[ Smarter completion ]==================================
