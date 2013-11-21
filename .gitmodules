@@ -64,3 +64,6 @@
 [submodule "bundle/jshint.vim"]
 	path = bundle/jshint.vim
 	url = git@github.com:wookiehangover/jshint.vim.git
+[submodule "bundle/vim-jshint"]
+	path = bundle/vim-jshint
+	url = git@github.com:sleistner/vim-jshint.git
