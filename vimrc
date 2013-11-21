@@ -13,7 +13,7 @@ filetype plugin on
 let netrw_list_hide='\.pyc,\.swp,\.git,tags'
 let g:ctrlp_mruf_exclude = '.*\.git/.*/COMMIT_EDITMSG'
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+"set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 "let sql_type_default='psql'
 
 "iab xcodegitconf # xcode noise<CR>build/*<CR>*.mode1v3<CR><CR># SVN directories<CR>.svn<CR><CR># osx noise<CR>.DS_Store<CR>profile<CR>
