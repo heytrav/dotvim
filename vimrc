@@ -1,9 +1,9 @@
-"runtime bundle/vim-pathogen/autoload/pathogen.vim
-"filetype off
-"call pathogen#incubate()
-"call pathogen#helptags()
-"call pathogen#infect()
-"filetype on
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+filetype off
+call pathogen#incubate()
+call pathogen#helptags()
+call pathogen#infect()
+filetype on
 syntax on
 colorscheme candycode
 
@@ -28,7 +28,7 @@ set laststatus=2
 
 
 "set statusline=%#StatusLineNC#\ %#ErrorMsg#\ %{fugitive#statusline()}\ %#StatusLine#\ %t%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]
-"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %#ErrorMsg#
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %#ErrorMsg#
 
 " Tips from vimcasts
 " Bubble single lines
