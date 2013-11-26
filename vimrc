@@ -13,6 +13,8 @@ filetype plugin on
 let netrw_list_hide='\.pyc,\.swp,\.git,tags'
 let g:ctrlp_mruf_exclude = '.*\.git/.*/COMMIT_EDITMSG'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 "set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 "let sql_type_default='psql'
 
