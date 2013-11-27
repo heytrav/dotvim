@@ -29,8 +29,8 @@ noremap <leader>. :CtrlPTag<CR>
 set laststatus=2
 
 
-"set statusline=%#StatusLineNC#\ %#ErrorMsg#\ %{fugitive#statusline()}\ %#StatusLine#\ %t%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %#ErrorMsg#
+set statusline=%#StatusLineNC#\ %#ErrorMsg#\ %{fugitive#statusline()}\ %#StatusLine#\ %t%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]
+"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %#ErrorMsg#
 
 " Tips from vimcasts
 " Bubble single lines
