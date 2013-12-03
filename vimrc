@@ -1,3 +1,4 @@
+" vim: set foldmethod=marker
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 filetype off
 call pathogen#incubate()
@@ -39,7 +40,7 @@ endif
 nmap <leader>v :tabedit $MYVIMRC<CR>
 nmap <leader>g :tabedit ~/.gvimrc<CR>
 
-"=====[ Indenting support ]==================
+"=====[ Indenting support ]================== {{{
 
 set wrapmargin=78
 set autoindent "Retain indentation on next line
@@ -50,7 +51,7 @@ inoremap # X<C-H>#
 
 
 
-"=====[ Make Visual modes work better ]==================
+"=====[ Make Visual modes work better ]================== {{{1
 
 
 " Make BS/DEL work as expected
@@ -59,7 +60,7 @@ vmap <BS> x
 "Square up visual selections
 set virtualedit=block
 
-"=====[ Smarter completion ]==================================
+"=====[ Smarter completion ]================================== {{{1
 
 "Add file of std words for <TAB> completion...
 set complete+=k~/.vim/std_completions
@@ -71,7 +72,7 @@ set complete+=k~/.vim/std_completions
 map <silent> TS :set expandtab<CR>:%retab!<CR>
 map <silent> TT :set noexpandtab<CR>:%retab!<CR>
 
-"=====[ Spelling support ]==================================
+"=====[ Spelling support ]================================== {{{1
 
 " Correct common mistypings in-the-fly...
 iab retrun return
@@ -88,7 +89,7 @@ iab previosu previous
 " Ring the bell every time "it's" is typed...
 imap it's it's<ESC><ESC>a
 
-"=====[ Tab handling ]======================================
+"=====[ Tab handling ]====================================== {{{1
 
 set tabstop=4 "Indentation levels every four columns
 set expandtab "Convert all tabs that are typed to spaces
@@ -97,7 +98,7 @@ set shiftround "Indent/outdent to nearest tabstop
 
 
 
-"=====[ Grammar checking ]========================================
+"=====[ Grammar checking ]======================================== {{{1
 
 let g:check_grammar = 0
 
@@ -118,7 +119,7 @@ map <silent> ;g :call CheckGrammar()<CR>``
 
 
 
-"=====[ Highlight cursor column on request ]===================
+"=====[ Highlight cursor column on request ]=================== {{{1
 
 highlight CursorColumn term=bold ctermfg=black ctermbg=green
 
@@ -131,7 +132,7 @@ set spelllang=en_us
 map <silent> ;s :setlocal invspell<CR>
 
 
-"=====[ Miscellaneous features ]==================================
+"=====[ Miscellaneous features ]================================== {{{1
 
 set title "Show filename in titlebar of window
 set titleold=
@@ -182,5 +183,6 @@ set timeout timeoutlen=300 ttimeoutlen=300
 " use ack instead of grep
 set grepprg=ack
 
+"===[ Clear tabs and trailing whitespace ]================== {{{1
 match Error /\t\|\s\+$/
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
