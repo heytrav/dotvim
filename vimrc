@@ -15,22 +15,14 @@ let g:ctrlp_mruf_exclude = '.*\.git/.*/COMMIT_EDITMSG'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
-"set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
-"let sql_type_default='psql'
 
-"iab xcodegitconf # xcode noise<CR>build/*<CR>*.mode1v3<CR><CR># SVN directories<CR>.svn<CR><CR># osx noise<CR>.DS_Store<CR>profile<CR>
 let mapleader = ","
-"map <C-p> :CtrlP<CR>
 map <leader>td <Plug>TaskList
 noremap <leader>. :CtrlPTag<CR>
-"noremap <silent> <leader>b :TagbarToggle<CR>
-"map <leader>g :GundoToggle<CR>
 
 set laststatus=2
 
-
 set statusline=%#StatusLineNC#\ %#ErrorMsg#\ %{fugitive#statusline()}\ %#StatusLine#\ %t%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]
-"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %#ErrorMsg#
 
 " Tips from vimcasts
 " Bubble single lines
