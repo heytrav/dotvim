@@ -150,7 +150,7 @@ set backspace=indent,eol,start "BS past autoindents, line boundaries,
 
 set matchpairs+=<:>   ",«:» "Match angle brackets too
 
-set background=dark "when guessing, guess bg is dark
+"set background=dark "when guessing, guess bg is dark
 
 
 set fileformats=unix,mac,dos "Handle Mac and DOS line-endings
