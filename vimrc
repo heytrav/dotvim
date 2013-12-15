@@ -21,9 +21,10 @@ let mapleader = ","
 map <leader>td <Plug>TaskList
 noremap <leader>. :CtrlPTag<CR>
 
+set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
 
-set statusline=%#StatusLineNC#\ %#ErrorMsg#\ %{fugitive#statusline()}\ %#StatusLine#\ %t%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]
+"set statusline=%#StatusLineNC#\ %#ErrorMsg#\ %{fugitive#statusline()}\ %#StatusLine#\ %t%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]
 
 " Tips from vimcasts
 " Bubble single lines
