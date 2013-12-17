@@ -16,12 +16,13 @@ let g:ctrlp_mruf_exclude = '.*\.git/.*/COMMIT_EDITMSG'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+let g:airline#extensions#tabline#enabled = 1
 
 let mapleader = ","
 map <leader>td <Plug>TaskList
 noremap <leader>. :CtrlPTag<CR>
 
-set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
+"set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
 
 "set statusline=%#StatusLineNC#\ %#ErrorMsg#\ %{fugitive#statusline()}\ %#StatusLine#\ %t%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]
