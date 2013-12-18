@@ -21,26 +21,34 @@ let g:airline#extensions#tabline#enabled = 1
 let mapleader = ","
 map <leader>td <Plug>TaskList
 noremap <leader>. :CtrlPTag<CR>
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-"set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
 
-"set statusline=%#StatusLineNC#\ %#ErrorMsg#\ %{fugitive#statusline()}\ %#StatusLine#\ %t%m%r%h%w\ [TYPE=%Y]\ [POS=%l,%v][%p%%]
+"let g:airline_theme_patch_func = 'AirlineThemePatch'
+"function! AirlineThemePatch(palette)
+"if g:airline_theme == 'candycode'
+    "for colors in values(a:palette.inactive)
+    "let colors[3] = 245
+    "endfor
+"endif
+"endfunction
+"let g:airline_powerline_fonts=0
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+    let g:airline_left_sep = '»'
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '«'
+    let g:airline_right_sep = '◀'
+    let g:airline_symbols.linenr = '␊'
+    let g:airline_symbols.linenr = '␤'
+    let g:airline_symbols.linenr = '¶'
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'ρ'
+    let g:airline_symbols.paste = 'Þ'
+    let g:airline_symbols.paste = '∥'
+    let g:airline_symbols.whitespace = 'Ξ'
+endif
+
+" unicode symbols
 
 " Tips from vimcasts
 " Bubble single lines
