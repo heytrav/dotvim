@@ -7,10 +7,12 @@ call pathogen#infect()
 filetype on
 syntax on
 colorscheme candycode
+inoremap <C-y> <C-k>
 
 filetype indent on
 filetype plugin on
 
+set rtp+=bundle/vim-airline/autoload/airline/themes/
 let netrw_list_hide='\.pyc,\.swp,\.git,tags'
 let g:ctrlp_mruf_exclude = '.*\.git/.*/COMMIT_EDITMSG'
 let g:ctrlp_working_path_mode = 'ra'
@@ -23,29 +25,14 @@ map <leader>td <Plug>TaskList
 noremap <leader>. :CtrlPTag<CR>
 set laststatus=2
 
-"let g:airline_theme_patch_func = 'AirlineThemePatch'
-"function! AirlineThemePatch(palette)
-"if g:airline_theme == 'candycode'
-    "for colors in values(a:palette.inactive)
-    "let colors[3] = 245
-    "endfor
-"endif
-"endfunction
-"let g:airline_powerline_fonts=1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
-    "let g:airline_left_sep = '»'
     let g:airline_left_sep = '▶'
-    "let g:airline_right_sep = '«'
     let g:airline_right_sep = '◀'
-    "let g:airline_symbols.linenr = '␊'
     let g:airline_symbols.linenr = '␤'
-    "let g:airline_symbols.linenr = '¶'
     let g:airline_symbols.branch = '⎇'
     let g:airline_symbols.paste = 'ρ'
-    let g:airline_symbols.readonly = '☠'
-    "let g:airline_symbols.paste = 'Þ'
-    "let g:airline_symbols.paste = '∥'
+    let g:airline_symbols.readonly = '☭'
 endif
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
