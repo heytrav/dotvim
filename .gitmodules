@@ -100,3 +100,6 @@
 [submodule "bundle/molokai"]
 	path = bundle/molokai
 	url = git@github.com:mrtazz/molokai.vim.git
+[submodule "bundle/vim-wombat"]
+	path = bundle/vim-wombat
+	url = git@github.com:cschlueter/vim-wombat.git
