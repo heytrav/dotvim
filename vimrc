@@ -6,13 +6,12 @@ call pathogen#helptags()
 call pathogen#infect()
 filetype on
 syntax on
-colorscheme candycode
+colorscheme badwolf
 inoremap <C-y> <C-k>
 
 filetype indent on
 filetype plugin on
 
-set rtp+=bundle/vim-airline/autoload/airline/themes/
 let netrw_list_hide='\.pyc,\.swp,\.git,tags'
 let g:ctrlp_mruf_exclude = '.*\.git/.*/COMMIT_EDITMSG'
 let g:ctrlp_working_path_mode = 'ra'
@@ -23,12 +22,16 @@ let g:airline#extensions#tabline#enabled = 1
 let mapleader = ","
 map <leader>td <Plug>TaskList
 noremap <leader>. :CtrlPTag<CR>
+
+set rtp+=bundle/vim-airline/autoload/airline/themes/
 set laststatus=2
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
     let g:airline_left_sep = '▶'
+    let g:airline_left_alt_sep = '░'
     let g:airline_right_sep = '◀'
+    let g:airline_right_alt_sep = '░'
     let g:airline_symbols.linenr = '␤'
     let g:airline_symbols.branch = '⎇'
     let g:airline_symbols.paste = 'ρ'
