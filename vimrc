@@ -47,6 +47,7 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
+let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing' ]
 
 " unicode symbols
 
