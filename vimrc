@@ -28,14 +28,6 @@ set laststatus=2
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
-    "let g:airline_left_sep = '▶'
-    "let g:airline_left_alt_sep = '》'
-    "let g:airline_right_sep = '◀'
-    "let g:airline_right_alt_sep = '《'
-    "let g:airline_symbols.linenr = '␤'
-    "let g:airline_symbols.branch = '⎇'
-    "let g:airline_symbols.paste = 'ρ'
-    "let g:airline_symbols.readonly = '⚠'
     let g:airline_left_sep = ''
     let g:airline_left_alt_sep = ''
     let g:airline_right_sep = ''
@@ -118,9 +110,11 @@ imap it's it's<ESC><ESC>a
 "=====[ Tab handling ]====================================== {{{1
 
 set tabstop=4 "Indentation levels every four columns
-set expandtab "Convert all tabs that are typed to spaces
+set softtabstop=4
 set shiftwidth=4 "Indent/outdent by four columns
 set shiftround "Indent/outdent to nearest tabstop
+set smarttab
+set expandtab "Convert all tabs that are typed to spaces
 
 
 
