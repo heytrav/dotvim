@@ -204,5 +204,5 @@ set timeout timeoutlen=300 ttimeoutlen=300
 set grepprg=ack
 
 "===[ Clear tabs and trailing whitespace ]================== {{{1
-match Error /\t\|\s\+$/
+"match Error /\t\|\s\+$/
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
