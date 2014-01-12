@@ -7,8 +7,7 @@ call pathogen#infect()
 filetype on
 syntax on
 colorscheme badwolf
-inoremap <C-y> <C-k>
-
+inoremap <C-l> <C-k>
 filetype indent on
 filetype plugin on
 
