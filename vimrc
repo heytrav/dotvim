@@ -6,7 +6,8 @@ call pathogen#helptags()
 call pathogen#infect()
 filetype on
 syntax on
-colorscheme badwolf
+set t_Co=256
+colorscheme solarized
 inoremap <C-l> <C-k>
 filetype indent on
 filetype plugin on
