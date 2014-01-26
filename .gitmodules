@@ -70,9 +70,6 @@
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
-[submodule "bundle/vim-luna"]
-	path = bundle/vim-luna
-	url = git@github.com:Pychimp/vim-luna.git
 [submodule "vim-wombat"]
 	path = vim-wombat
 	url = git@github.com:cschlueter/vim-wombat.git
