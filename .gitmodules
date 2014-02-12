@@ -76,3 +76,6 @@
 [submodule "bundle/vim-pep8-indent"]
 	path = bundle/vim-pep8-indent
 	url = git@github.com:hynek/vim-python-pep8-indent.git
+[submodule "bundle/webapi-vim"]
+	path = bundle/webapi-vim
+	url = https://github.com/mattn/webapi-vim
