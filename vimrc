@@ -19,6 +19,8 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 let g:airline#extensions#tabline#enabled = 1
 
+
+
 let mapleader = ","
 map <leader>td <Plug>TaskList
 noremap <leader>. :CtrlPTag<CR>
