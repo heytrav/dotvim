@@ -1,9 +1,9 @@
 " vim: set foldmethod=marker
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 filetype off
-call pathogen#incubate()
+call pathogen#infect('bundle/{}')
 call pathogen#helptags()
-call pathogen#infect()
+"call pathogen#infect()
 filetype on
 syntax on
 set t_Co=256
