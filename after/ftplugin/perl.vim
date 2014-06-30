@@ -8,7 +8,7 @@ map H :nohlsearch<CR>
 "=====[ Text formatting ]==================================
 
 " Format file with perltidy...
-map ;t 1G!Gperltidy -q <CR>
+map ;t 1G!Gperltidy -q -st -se -i=4 -ci=4 -pt=2 -otr -sot -sct -nsfs -noll -nola<CR>
 
 
 
