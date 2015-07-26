@@ -102,3 +102,6 @@
 	path = bundle/vim-snippets
 	url = git@github.com:honza/vim-snippets.git
     branch = master
+[submodule "bundle/dockerfile"]
+	path = bundle/dockerfile
+	url = git@github.com:honza/dockerfile.vim.git
