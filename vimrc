@@ -1,10 +1,35 @@
 " vim: set foldmethod=marker
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-filetype off
-call pathogen#infect('bundle/{}')
-call pathogen#helptags()
-"call pathogen#infect()
-filetype on
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/repos/powerline/bindings/vim
+call vundle#begin()
+
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'The-NERD-Commenter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'L9'
+Plugin 'jsbeautify'
+Plugin 'Solarized'
+Plugin 'Tabular'
+Plugin 'unimpaired.vim'
+Plugin 'ctrlp.vim'
+Plugin 'surround.vim'
+Plugin 'UltiSnips'
+Plugin 'Jinja'
+Plugin 'Autoclose'
+
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'airblade/vim-gitgutter'
+call vundle#end()            " required
+set laststatus=2
+filetype plugin indent on    " required
 syntax on
 set t_Co=256
 colorscheme solarized
@@ -17,51 +42,13 @@ let g:ctrlp_mruf_exclude = '.*\.git/.*/COMMIT_EDITMSG'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 
 
 let mapleader = ","
 map <leader>td <Plug>TaskList
 noremap <leader>. :CtrlPTag<CR>
-
-set rtp+=bundle/vim-airline/autoload/airline/themes/
-set laststatus=2
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = ''
-    let g:airline_symbols.whitespace = 'Ξ'
-endif
-let g:airline_detect_modified=1
-let g:airline_detect_paste=1
-let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing' ]
-
-"function! g:UltiSnips_Complete()
-    "call UltiSnips#ExpandSnippet()
-    "if g:ulti_expand_res == 0
-        "if pumvisible()
-            "return "\<C-n>"
-        "else
-            "call UltiSnips#JumpForwards()
-            "if g:ulti_jump_forwards_res == 0
-                "return "\<TAB>"
-            "endif
-        "endif
-    "endif
-    "return ""
-"endfunction
-
-"au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-"let g:UltiSnipsJumpForwardTrigger="<tab>"
-"let g:UltiSnipsListSnippets="<c-e>"
-" unicode symbols
 
 " Tips from vimcasts
 " Bubble single lines
