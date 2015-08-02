@@ -22,6 +22,7 @@ Plugin 'surround.vim'
 Plugin 'UltiSnips'
 Plugin 'Jinja'
 Plugin 'Autoclose'
+Plugin 'Gist.vim'
 
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'git://git.wincent.com/command-t.git'
