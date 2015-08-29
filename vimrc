@@ -14,20 +14,22 @@ Plugin 'The-NERD-Commenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
 Plugin 'jsbeautify'
-Plugin 'Solarized'
 Plugin 'Tabular'
 Plugin 'unimpaired.vim'
 Plugin 'ctrlp.vim'
 Plugin 'surround.vim'
-Plugin 'UltiSnips'
 Plugin 'Jinja'
 Plugin 'Autoclose'
 Plugin 'Gist.vim'
-
+Plugin 'WebAPI.vim'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'airblade/vim-gitgutter'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'jlanzarotta/bufexplorer'
 call vundle#end()            " required
 set laststatus=2
 filetype plugin indent on    " required
@@ -46,6 +48,12 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 "let g:airline#extensions#tabline#enabled = 1
 
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 let mapleader = ","
 map <leader>td <Plug>TaskList
