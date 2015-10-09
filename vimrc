@@ -19,9 +19,10 @@ Plugin 'unimpaired.vim'
 Plugin 'ctrlp.vim'
 Plugin 'surround.vim'
 Plugin 'Jinja'
-Plugin 'Autoclose'
 Plugin 'Gist.vim'
 Plugin 'WebAPI.vim'
+Plugin 'AutoClose'
+Plugin 'klen/python-mode'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -54,6 +55,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" python-mode extremely slow otherwise
+let g:pymode_rope=0
 
 let mapleader = ","
 map <leader>td <Plug>TaskList
