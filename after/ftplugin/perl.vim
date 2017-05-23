@@ -1,4 +1,3 @@
-"colorscheme candycode
 
 
 "Key mapping to switch off highlighting till next search...

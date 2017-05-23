@@ -1,1 +1,1 @@
-set guifont=Meslo\ LG\ L\ for\ Powerline:h11
+set guifont=Meslo\ LG\ L\ for\ Powerline\ 10 

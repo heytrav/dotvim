@@ -1,10 +1,17 @@
-" vim: set foldmethod=marker
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+let g:python_host_prog = '/usr/bin/python3'
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+if has('nvim')
+    let s:editor_root=expand('~/.config/nvim')
+else
+    let s:editor_root=expand('~/.vim')
+endif
+"set rtp+=~/.vim/bundle/Vundle.vim
+let &rtp = &rtp. ','. s:editor_root . '/bundle/Vundle.vim'
 set rtp+=~/repos/powerline/bindings/vim
+let g:powerline_pycmd = "py3"
 call vundle#begin()
 
 
@@ -21,6 +28,7 @@ Plugin 'surround.vim'
 Plugin 'Jinja'
 Plugin 'Gist.vim'
 Plugin 'WebAPI.vim'
+Bundle 'aming/vim-mason'
 Plugin 'AutoClose'
 Plugin 'klen/python-mode'
 Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -31,6 +39,8 @@ Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jlanzarotta/bufexplorer'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'benmills/vimux'
 call vundle#end()            " required
 set laststatus=2
 filetype plugin indent on    " required
@@ -48,6 +58,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 "let g:airline#extensions#tabline#enabled = 1
 
+let g:fugitive_gitlab_domains = ['https://gitlab.wgtn.cat-it.co.nz']
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -226,3 +237,5 @@ set grepprg=ack
 "===[ Clear tabs and trailing whitespace ]================== {{{1
 "match Error /\t\|\s\+$/
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+set foldlevelstart=20
