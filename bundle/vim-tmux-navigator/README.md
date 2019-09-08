@@ -65,6 +65,11 @@ bind-key -n C-j if-shell "$is_vim" "send-keys C-j"  "select-pane -D"
 bind-key -n C-k if-shell "$is_vim" "send-keys C-k"  "select-pane -U"
 bind-key -n C-l if-shell "$is_vim" "send-keys C-l"  "select-pane -R"
 bind-key -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
+bind-key -T copy-mode-vi C-h select-pane -L
+bind-key -T copy-mode-vi C-j select-pane -D
+bind-key -T copy-mode-vi C-k select-pane -U
+bind-key -T copy-mode-vi C-l select-pane -R
+bind-key -T copy-mode-vi C-\ select-pane -l
 ```
 
 #### TPM
@@ -111,7 +116,10 @@ Left would be created with `nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>`.
 
 ##### Autosave on leave
 
-You can configure the plugin to write the current buffer, or all buffers, when navigating from Vim to tmux. This functionality is exposed via the `g:tmux_navigator_save_on_switch` variable, which can have either of the following values:
+You can configure the plugin to write the current buffer, or all buffers, when
+navigating from Vim to tmux. This functionality is exposed via the
+`g:tmux_navigator_save_on_switch` variable, which can have either of the
+following values:
 
 Value  | Behavior
 ------ | ------
@@ -206,10 +214,17 @@ altered to avoid conflicting with the mappings from the plugin.
 
 Another option is that the pattern matching included in the `.tmux.conf` is
 not recognizing that Vim is active. To check that tmux is properly recognizing
-Vim, use the provided Vim command `:TmuxPaneCurrentCommand`. The output of
-that command should be a string like 'vim', 'Vim', 'vimdiff', etc. If you
-encounter a different output please [open an issue][] with as much info about
-your OS, Vim version, and tmux version as possible.
+Vim, use the provided Vim command `:TmuxNavigatorProcessList`. The output of
+that command should be a list like:
+
+```
+Ss   -zsh
+S+   vim
+S+   tmux
+```
+
+If you encounter a different output please [open an issue][] with as much info
+about your OS, Vim version, and tmux version as possible.
 
 [open an issue]: https://github.com/christoomey/vim-tmux-navigator/issues/new
 
@@ -230,6 +245,12 @@ Consider moving code from your shell's non-interactive rc file (e.g.,
 `~/.zshenv`) into the interactive startup file (e.g., `~/.zshrc`) as Vim only
 sources the non-interactive config.
 
+### It doesn't work in Vim's `terminal` mode
+
+Terminal mode is currently unsupported as adding this plugin's mappings there
+causes conflict with movement mappings for FZF (it also uses terminal mode).
+There's a conversation about this in https://github.com/christoomey/vim-tmux-navigator/pull/172
+
 ### It Doesn't Work in tmate
 
 [tmate][] is a tmux fork that aids in setting up remote pair programming
@@ -240,32 +261,6 @@ issue](https://github.com/christoomey/vim-tmux-navigator/issues/27) for more
 detail.
 
 [tmate]: http://tmate.io/
-
-### It Doesn't Work in Neovim (specifically C-h)
-
-[Neovim][] is a Vim fork. While Neovim is intended to be a drop-in replacement
-for Vim, it does handle some keyboard input differently than Vim does. Some
-users (including those on OS X) may find that all of their pane-switching
-keybindings work with the exception of <kbd>Ctrl</kbd>+<kbd>h</kbd>, which
-instead returns a backspace. The explanation of what is going on vastly exceeds
-the scope of this guide, but you can read the discussion on this Neovim
-[issue][].
-
-The simplest and hackiest solution is to add the following to your Neovim
-`init.vim`, capturing the <kbd>Backspace</kbd> that Neovim receives when
-<kbd>Ctrl</kbd>+<kbd>h</kbd> is typed in normal mode:
-
-```vimL
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-```
-
-A more complete and less-hacky solution would be to update the incorrect
-terminfo entry that is part of the problem on OS X (and some Linux
-distributions) as described in this [comment][].
-
-[Neovim]: https://neovim.io/
-[issue]: https://github.com/neovim/neovim/issues/2048
-[comment]: https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
 
 ### It Still Doesn't Work!!!
 

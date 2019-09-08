@@ -19,6 +19,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'The-NERD-Commenter'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'L9'
 Plugin 'jsbeautify'
 Plugin 'Tabular'
@@ -41,6 +42,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'jlanzarotta/bufexplorer'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
+Plugin 'hashivim/vim-terraform'
 call vundle#end()            " required
 set laststatus=2
 filetype plugin indent on    " required
@@ -58,7 +60,8 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 "let g:airline#extensions#tabline#enabled = 1
 
-let g:fugitive_gitlab_domains = ['https://gitlab.wgtn.cat-it.co.nz']
+let g:netrw_browsex_viewer= "gnome-open-fixed"
+let g:fugitive_gitlab_domains = ['https://gitlab.wgtn.cat-it.co.nz', 'https://gitlab.catalyst.net.nz']
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
